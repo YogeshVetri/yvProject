@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:padding="10dp"
+    tools:context=".TaskActvity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/homeBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/quizlinear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/output_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:theme="@style/ToolbarColoredBackArrow"
+                        app:titleTextColor="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/toolbar"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_google_icon" />
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/baloo_thambi"
+                        android:gravity="center"
+                        android:text="Tasks"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/transparent"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:src="@drawable/quiz"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/baloo_thambi"
+                    android:gravity="center"
+                    android:text="Testpress Tech Labs LLP Developer Assessment Round"
+                    android:textColor="@color/blue" />
+
+
+                <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/nextCount"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:text="1"
+                            android:visibility="invisible" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="The school can create multiple quizzes. Each quiz should have 10 questions."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="The questions should be MCQs. It can be a single correct or multiple correct."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task3"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="A user should be able to visit the application from the web or mobile and start taking
+any of the available quizzes."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Users should start the quiz by clicking the start button."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task5"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Users should be able to see a question with 4 possible answers."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task6"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="The results should be instant. After the user selects an answer for a question,
+whether it is correct or incorrect should be shown immediately. If incorrect the
+correct answer should be shown."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task7"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Once a question is submitted, the user should be allowed to see the next question."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task8"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="At the end, the user should be able to see the time it took to finish the quiz."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task9"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="how
+many correct answers the user got, and a message showing pass or fail."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task10"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Allow authentication and save user answers in a database."
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task11"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Can see my result immediately                                                 "
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task12"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Can see the correct answer if I’ve answered incorrectly immediately"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/task13"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Can see my total result at the end of the quiz                                              "
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+
+                                android:background="@drawable/border"
+                                android:gravity="center">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:id="@+id/box14"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:clickable="false"
+
+                                    android:contextClickable="false"
+                                    android:padding="7dp"
+                                    android:visibility="invisible"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_loop="false"
+                                    app:lottie_rawRes="@raw/tickbox" />
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:id="@+id/task14"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="25dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:orientation="horizontal"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Can see the time taken at the end of the quiz                                                   "
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greenbutton"
+
+            android:padding="1dp"
+            android:text="Home"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="GoToHome"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

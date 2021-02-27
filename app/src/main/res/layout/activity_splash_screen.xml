@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".SignUpLogin.SplashScreenActivity">
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:contextClickable="false"
+
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/quiz" />
+
+
+            <TextView
+
+                android:id="@+id/logo_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/baloo_thambi"
+                android:gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:transitionName="logo_name_trans" />
+
+
+            <TextView
+                android:id="@+id/textoption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/secular_one"
+                android:gravity="center"
+                android:hint="!"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

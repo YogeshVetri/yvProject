@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">yvProject</string>
+    <string name="google_maps_key">AIzaSyDHGjvf7bL0vgRoWlvw0GkQ7sLvAM6NQYM</string>
+
+
+    <string name="tiktok_app_name">TikTok</string>
+    <string name="likee_app_name">Likee</string>
+    <string name="gallery_name">Gallery</string>
+    <string name="share_app_name">Share App</string>
+
+
+    <string name="no_result_found">No Result Found</string>
+
+
+    <string name="loadedfullname"></string>
+    <string name="loadedemail"></string>
+    <string name="loadedphone"></string>
+    <string name="_10">/ 10</string>
+    <string name="_00_00">00 : 00</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+</resources>

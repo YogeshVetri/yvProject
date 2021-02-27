@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:padding="10dp"
+    tools:context=".staff.CreateQuiz">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/quizlinear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/output_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:theme="@style/ToolbarColoredBackArrow"
+                        app:titleTextColor="@color/colorPrimaryDark" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/toolbar"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_google_icon" />
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/baloo_thambi"
+                        android:gravity="center"
+                        android:text="Add Quizes."
+                        android:textAlignment="gravity"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/transparent"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:src="@drawable/quiz"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text="QUESTION"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/questionNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text="1"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/Total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text=" / 10"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/lquestionView"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="3dp"
+
+                            android:hint="Type Your Question Here"
+                            android:textColorHint="@color/black">
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/questionView"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/browser_actions_bg_grey"
+                                android:focusableInTouchMode="true"
+
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="start"
+                                android:maxLines="5"
+                                android:minHeight="150dp"
+                                android:padding="8dp"
+                                android:textColorHint="@color/grey" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+
+                            <CheckBox
+                                android:id="@+id/aCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+
+                                android:text="A" />
+
+
+                            <EditText
+                                android:id="@+id/aText"
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20sp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="OPTION A"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <CheckBox
+                                android:id="@+id/bCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="B" />
+
+                            <EditText
+                                android:id="@+id/bText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20sp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="OPTION B"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <CheckBox
+                                android:id="@+id/cCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="C" />
+
+                            <EditText
+                                android:id="@+id/cText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20sp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="OPTION C"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+                            <CheckBox
+                                android:id="@+id/dCheck"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:text="D" />
+
+
+                            <EditText
+                                android:id="@+id/dText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20sp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="OPTION D"
+                                android:inputType="text" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5sp"
+                            android:weightSum="1">
+
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/lexplanationView"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+
+                                android:hint="Explanation"
+                                android:textColorHint="@color/black">
+
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/explanationView"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/browser_actions_bg_grey"
+                                     android:focusableInTouchMode="true"
+
+                                    android:fontFamily="@font/baloo_thambi"
+
+                                    android:gravity="start"
+                                    android:textColorHint="@color/grey" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/correctAnswer"
+                            android:layout_width="0dp"
+
+                            android:layout_height="0dp"
+                            android:fontFamily="@font/baloo_thambi"
+                            android:hint="Multiple Correct Choices"
+                            android:inputType="text"
+                            android:text="" />
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greenbutton"
+            android:padding="1dp"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greenbutton"
+            android:onClick="GotoHome"
+            android:padding="1dp"
+            android:text="Home"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/nextBtn"
+            app:layout_constraintStart_toStartOf="@+id/clearbtn" />
+
+
+        <Button
+
+            android:id="@+id/clearbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:onClick="clearfields"
+            android:padding="1dp"
+            android:text="Clear"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

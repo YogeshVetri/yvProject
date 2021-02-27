@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:padding="15dp"
+    tools:context=".SignUpLogin.SignUpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/logo_image"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@color/transparent"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:fontFamily="@font/baloo_thambi"
+            android:transitionName="logo_trans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/quiz" />
+
+        <TextView
+            android:id="@+id/logo_name"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/baloo_thambi"
+            android:text="Welcome"
+
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:transitionName="logo_name_trans"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/logo_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textoption"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_thambi"
+
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/logo_name"
+            app:layout_constraintStart_toStartOf="@+id/logo_name"
+            app:layout_constraintTop_toBottomOf="@+id/logo_name" />
+
+
+
+
+        <TextView
+            android:id="@+id/slogan_name"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo_thambi"
+            android:text="SignIn to continue"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:transitionName="slogan_trans"
+            app:layout_constraintEnd_toEndOf="@+id/logo_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo_image" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="25dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slogan_name">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/useremail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:hint="Email ID"
+                    android:textColorHint="@color/black"
+                    android:transitionName="email_box_trans">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regMail"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userphone"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:hint="Phone"
+                    android:textColorHint="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="10"
+
+                        android:textColor="@color/black"
+                        android:transitionName="phone_box_trans" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/username"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:hint="Name"
+                    android:textColorHint="@color/black"
+                    android:transitionName="username_box_trans">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userpassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+
+                    android:hint="Password"
+                    android:textColorHint="@color/black"
+                    android:transitionName="password_box_trans"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regPassword"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/usersignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bottomsmooth"
+                    android:elevation="10dp"
+
+                    android:fontFamily="@font/baloo_thambi"
+                    android:text="Register"
+                    android:textColor="@color/white"
+                    android:transitionName="btn_signup_trans" />
+
+                <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/login_progress"
+                    style="@style/SpinKitView.Wave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:SpinKit_Color="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/registerBtn"
+                    app:layout_constraintEnd_toEndOf="@+id/registerBtn"
+                    app:layout_constraintStart_toStartOf="@+id/registerBtn"
+                    app:layout_constraintTop_toTopOf="@+id/registerBtn" />
+                <EditText
+                    android:id="@+id/points"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="invisible"
+                    android:fontFamily="@font/baloo_thambi"
+                    android:hint="Multiple Correct Choices"
+                    android:inputType="text"
+                    android:text="0" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

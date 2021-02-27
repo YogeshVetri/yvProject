@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:padding="10dp"
+    tools:context=".student.AttendQuiz">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/quizlinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/output_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:theme="@style/ToolbarColoredBackArrow"
+                            app:titleTextColor="@color/colorPrimaryDark" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/toolbar"
+
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <TextView
+                                android:id="@+id/questionNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/Total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text=" / 10"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo_thambi"
+                            android:gravity="center"
+                            android:text="Quiz"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:visibility="invisible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginRight="12dp"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <TextView
+                                android:id="@+id/counttimerText"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text="@string/_00_00"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:visibility="invisible" />
+
+
+                            <TextView
+                                android:id="@+id/timerView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_timer"
+                                android:drawablePadding="5dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:text="0:0"
+                                android:textColor="@color/white"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ScrollView
+                        android:id="@+id/scrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical"
+                            android:weightSum="1">
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/lquestionView"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+
+                                android:hint="Question"
+                                android:textColorHint="@color/black">
+
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/questionView"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/browser_actions_bg_grey"
+                                    android:clickable="false"
+                                    android:cursorVisible="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+
+                                    android:fontFamily="@font/baloo_thambi"
+                                    android:gravity="start"
+                                    android:maxLines="5"
+                                    android:minHeight="150dp"
+                                    android:padding="8dp"
+                                    android:textColorHint="@color/grey" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/aText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/nooption"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:text="option A"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/bText"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/nooption"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:text="option B"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/cText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/nooption"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:text="option C"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/dText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/nooption"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:text="option D"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/lexplanationView"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+
+                                android:hint="Explanation"
+                                android:textColorHint="@color/black">
+
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/explanationView"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@color/browser_actions_bg_grey"
+                                    android:clickable="false"
+                                    android:cursorVisible="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+
+                                    android:fontFamily="@font/baloo_thambi"
+
+                                    android:gravity="start"
+                                    android:textColorHint="@color/grey" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <EditText
+                                android:id="@+id/correctAnswer"
+
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="Multiple Correct Choices"
+                                android:inputType="text"
+                                android:text=""
+                                android:visibility="invisible" />
+
+                            <EditText
+                                android:id="@+id/points"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="Multiple Correct Choices"
+                                android:inputType="text"
+                                android:text="0"
+                                android:visibility="invisible" />
+
+                            <EditText
+                                android:id="@+id/fixedtime"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:hint="fixed Time For Quiz"
+                                android:inputType="text"
+                                android:text="300000"
+
+                                android:visibility="invisible" />
+
+                        </LinearLayout>
+
+                    </ScrollView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/quizlinear2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/head1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/output_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:theme="@style/ToolbarColoredBackArrow"
+                            app:titleTextColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo_thambi"
+                            android:gravity="center"
+                            android:text="RESULT"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginRight="12dp"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/subtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/baloo_thambi"
+                            android:gravity="center"
+                            android:minHeight="50dp"
+                            android:text="You Have Scored :"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/subtitle">
+
+                            <TextView
+                                android:id="@+id/securedmarks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:paddingRight="6dp"
+                                android:text="1"
+                                android:textColor="@color/green"
+                                android:textSize="25sp" />
+
+
+                            <TextView
+                                android:id="@+id/totalmarks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:text="@string/_10"
+                                android:textColor="@color/black"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottie"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="0dp"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:contextClickable="false"
+                            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/completed" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <TextView
+                                android:id="@+id/subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:paddingRight="6dp"
+                                android:text="Completed in"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+
+                            <TextView
+                                android:id="@+id/totaltimetaken"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo_thambi"
+                                android:gravity="center"
+                                android:minHeight="50dp"
+                                android:text="@string/_10"
+                                android:textColor="@color/red"
+                                android:textSize="25sp" />
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greenbutton"
+            android:onClick="NextQuestion"
+            android:padding="1dp"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greenbutton"
+            android:onClick="GoToHome"
+            android:padding="1dp"
+            android:text="Home"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
