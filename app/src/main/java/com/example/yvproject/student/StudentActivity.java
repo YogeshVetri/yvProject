@@ -125,7 +125,7 @@ public class StudentActivity extends AppCompatActivity {
 
 
     public void startQuiz(View view) {
-        Intent intent = new Intent(StudentActivity.this, TaskActvity.class);
+        Intent intent = new Intent(StudentActivity.this, AttendQuiz.class);
 
         startActivity(intent);
     }

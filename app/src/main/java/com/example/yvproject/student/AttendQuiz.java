@@ -150,6 +150,7 @@ public class AttendQuiz extends AppCompatActivity {
                     Toast.makeText(AttendQuiz.this, "Correct", Toast.LENGTH_SHORT).show();
                     dText.setBackgroundResource(R.drawable.correctoption);
                     displayandaddpoint();
+
                 } else {
                     displayallanswers();
                 }
@@ -249,7 +250,7 @@ public class AttendQuiz extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 assert documentSnapshot != null;
-                explanation.setText(documentSnapshot.getString("explanation"));
+                explanation.setText(documentSnapshot.getString("Explanation"));
 
 
             }
@@ -260,6 +261,7 @@ public class AttendQuiz extends AppCompatActivity {
             Toast.makeText(AttendQuiz.this, "Correct", Toast.LENGTH_SHORT).show();
             aText.setBackgroundResource(R.drawable.correctoption);
             aText.setEnabled(false);
+
         } else {
             aText.setBackgroundResource(R.drawable.wrongoption);
             aText.setEnabled(false);
@@ -454,6 +456,7 @@ public class AttendQuiz extends AppCompatActivity {
         cText.setText("");
         dText.setText("");
         correctAnswer.setText("");
+        explanation.setText("");
 
 
     }

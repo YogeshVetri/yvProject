@@ -156,9 +156,9 @@ public class CreateQuiz extends AppCompatActivity implements View.OnClickListene
 
         String Answer = correctAnswer.getText().toString();
         String Explanation = eText.getText().toString();
-
+String timetocomplete="600000";
         final String test = questionNumber.getText().toString();
-        String collectionpath = "Testing";
+        String collectionpath = "Category";
         DocumentReference documentReference = fStore.collection(collectionpath).document(test);
         Map<String, Object> user = new HashMap<>();
         user.put("Question", questionn);
@@ -168,6 +168,7 @@ public class CreateQuiz extends AppCompatActivity implements View.OnClickListene
         user.put("D", Doption);
         user.put("Answer", Answer);
         user.put("Explanation", Explanation);
+        user.put("timetocomplete",timetocomplete);
 
         documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
